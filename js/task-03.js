@@ -1,27 +1,18 @@
 import users from './users.js';
 
-// Написал на Тернарнике
+// Написал на через чейнинг
 
 const getUsersWithGender = (users, gender) =>
-  users.map(user => (user.gender === gender ? user.name : null));
+  users.filter(user => user.gender === gender).map(user => user.name);
 
-// Написал на классическом if
-
-// const getUsersWithGender = (users, gender) =>
-//   users.map(user => {
-//     if (user.gender === gender) {
-//       return user.name;
-//     }
-//   });
-
-// Написал на reduce (в видосе 15:36)
+// Написал на reduce
 
 // const getUsersWithGender = (users, gender) =>
 //   users.reduce((acc, user) => {
 //     if (user.gender === gender) {
 //       acc.push(user.name);
-//       return acc;
 //     }
+//     return acc;
 //   }, []);
 
 console.log(getUsersWithGender(users, 'male'));
